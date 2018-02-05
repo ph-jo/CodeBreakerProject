@@ -5,13 +5,13 @@ function guess() {
     var input = document.getElementById('user-guess');
 //add functionality to guess function here
 
-    if (answer.value == '' || attempt.value == '') {
+    if (answer == '' || attempt == '') {
         setHiddenFields();
     }
 
     if (!validateInput(input.valueOf())) return;
-    attempt.value++;
-    if (getResults(i.value)) {
+    attempt++;
+    if (getResults(i)) {
         setMessage("You Win! :)");
         showAnswer(true);
         showReplay();
@@ -27,10 +27,10 @@ function guess() {
 //implement new functions here
 
 function setHiddenFields(){
-    attempt.value = 0;
-    answer.value = Math.floor(Math.random()*10000).toString();
-    while(answer.value.length<4){
-        answer.value = "0" + answer.value;
+    attempt = 0;
+    answer = Math.floor(Math.random()*10000).toString();
+    while(answer.length<4){
+        answer = "0" + answer;
     }
 }
 
