@@ -1,5 +1,12 @@
 var answer = document.getElementById('answer');
 var attempt = document.getElementById('attempt');
+function setHiddenFields(){
+    attempt = 0;
+    answer = Math.floor(Math.random()*10000).toString();
+    while(answer.length<4){
+        answer = "0" + answer;
+    }
+}
 
 function guess() {
     var input = document.getElementById('user-guess');
@@ -29,13 +36,7 @@ function guess() {
 
 //implement new functions here
 
-function setHiddenFields(){
-    attempt = 0;
-    answer = Math.floor(Math.random()*10000).toString();
-    while(answer.length<4){
-        answer = "0" + answer;
-    }
-}
+
 
 function setMessage(message){
     document.getElementById("message").innerHTML = message;
